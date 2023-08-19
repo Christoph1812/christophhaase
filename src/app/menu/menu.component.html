@@ -1,9 +1,15 @@
-<header>
-    <img src="/assets/img/bunny-logo.png" alt="Bunny">
-    <div>
-        <a href="#">Link1</a>
-        <a href="#">Link2</a>
-        <a href="#">Link3</a>
-        <a href="#">Link4</a>
+<header [class.headerDark]="darkMode">
+
+
+
+
+
+    <img *ngIf="!darkMode" routerLink="/" src="/assets/img/bunny-logo.png" alt="Bunny">
+    <img *ngIf="darkMode" routerLink="/" src="/assets/img/bunny-logo-black.png" alt="Bunny">
+
+    <div [class.darkLinks]="darkMode">
+        <a routerLink="/">Home</a>
+        <a routerLink="/data-protection">Data protection</a>
+        <a routerLink="/imprint">Imprint</a>
     </div>
 </header>
